@@ -1,0 +1,73 @@
+<apex:page >
+  <h1>Example of Page Layout / App Operation</h1><br/>
+  <apex:pageBlock >
+  <h2>Page 1</h2>
+  <apex:form >
+      <apex:sectionHeader title="Upload Virgin Money Giving Donations from a CSV Export"/>
+      <apex:pagemessages />
+      <apex:pageBlock >
+             <center>
+             <label for="email">Upload File </label><input maxlength="80" name="email" size="20" type="text" />
+             <button type="button">Upload File</button> 
+              <br/> <br/> <font color="red"> <b>Note: Only upload the CSV file downloaded from Virgin Money Giving</b> </font>
+             </center>   
+      </apex:pageBlock>
+<apex:pageBlock >
+     
+      </apex:pageBlock>      
+   </apex:form>
+   </apex:pageBlock>
+   
+   <apex:pageBlock >
+  <h2>Page 2 (Option A)</h2>
+  <apex:form >
+      <apex:sectionHeader title="Not All Virgin Money Fundraisers Could be Matched"/>
+      <apex:pagemessages />
+      <apex:pageBlock >
+        <table>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Virgin Money Giver ID</th>
+            </tr>
+            <tr>
+                <td>Sally</td>
+                <td>Smith</td>
+                <td>sally.smith.fake@gmail.com</td>
+                <td>1234567</td>
+            </tr>
+          </table>                                                                   
+      </apex:pageBlock>
+      <apex:pageBlock >
+         Please review your Salesforce Contact Records. These contacts may already exist, in which case you will want to add the Virgin Money Giving ID to their Contact Record.
+         Other Contacts may need to be created. Currently, this tool does not support auto-creation. You will have to add these contacts manually.
+      </apex:pageBlock>      
+   </apex:form>
+   </apex:pageBlock>
+   
+  <apex:pageBlock >
+  <h2>Page 2 (Option B)</h2>
+  <apex:form >
+      <apex:sectionHeader title="All Virgin Money Fundraisers Were Matched"/>
+      <apex:pagemessages />
+      <apex:pageBlock >
+         All Fundraisers were matched using the Virgin Money Giving ID. To create / update the Donation records, please click Submit.<br/><br/>
+         <button type="button">Insert / Update Donations</button> 
+      </apex:pageBlock>      
+   </apex:form>
+   </apex:pageBlock>
+  
+  
+  <apex:pageBlock >
+  <h2>Page 3</h2>
+  <apex:form >
+      <apex:sectionHeader title="Virgin Money Donations were Inserted / Updated"/>
+      <apex:pagemessages />
+      <apex:pageBlock >
+         A total of 56 donations were updated/inserted. Of those, 32 records were new donations, and 24 records were existing donations.<br/>
+         If Virgin Money Giving status of the record has changed, then the record details would be updated.
+      </apex:pageBlock>      
+   </apex:form>
+   </apex:pageBlock>
+</apex:page>

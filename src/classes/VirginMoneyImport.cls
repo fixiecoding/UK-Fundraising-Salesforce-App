@@ -59,7 +59,7 @@ public with sharing class VirginMoneyImport {
         // so, split on newline to get the spreadsheet rows
         List<String> lines = new List<String>();
         try {
-            lines = contents.split('\r');
+            lines = contents.split('\r\n');
         } catch (System.ListException e) {
             System.debug('Limits exceeded?' + e.getMessage());
         }
