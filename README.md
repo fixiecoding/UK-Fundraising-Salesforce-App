@@ -5,7 +5,7 @@ UK Fundraising Salesforce App
 
 This repo contains all code, 
 
-Milestones PM is published by Third Sector IT and is Copyright (c) 2012 Third Sector IT.
+UK Fundraising Salesforce App is published by Third Sector IT and is Copyright (c) 2012 Third Sector IT.
 
 The app is available via the [GPL2 license](http://www.gnu.org/licenses/gpl-2.0.html).  Contributions welcome. 
 
