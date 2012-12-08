@@ -1,25 +1,34 @@
 <apex:page >
   <h1>Example of Page Layout / App Operation</h1><br/>
+  The following sections walk you through the proposed function of the app. <br/><br/>
   <apex:pageBlock >
-  <h2>Page 1</h2>
+  <apex:facet name="header">  <h2>Page 1</h2> In the first page the user will upload the export file which they recently
+  downloaded from Virgin Money Giving. A dummy file is in the github repositore.</apex:facet>
+
   <apex:form >
       <apex:sectionHeader title="Upload Virgin Money Giving Donations from a CSV Export"/>
       <apex:pagemessages />
       <apex:pageBlock >
              <center>
              <label for="email">Upload File </label><input maxlength="80" name="email" size="20" type="text" />
-             <button type="button">Upload File</button> 
-              <br/> <br/> <font color="red"> <b>Note: Only upload the CSV file downloaded from Virgin Money Giving</b> </font>
+             <button type="button">Browse</button> <br/>
+             <center><button type="button">Upload</button></center>
+             <br/> <font color="red"> <b>Note: Only upload the CSV file downloaded from Virgin Money Giving.<br/>
+             The file should be in the format Flexible Reports, for any time period, exported to CSV.</b></font>
              </center>   
-      </apex:pageBlock>
-<apex:pageBlock >
-     
-      </apex:pageBlock>      
+      </apex:pageBlock> 
    </apex:form>
-   </apex:pageBlock>
-   
-   <apex:pageBlock >
-  <h2>Page 2 (Option A)</h2>
+ </apex:pageBlock>
+ 
+ 
+ <br/>
+ <apex:pageBlock >
+  <apex:facet name="header">
+    <h2>Page 2 (Option A)</h2>
+    In the initial phase, the app will not be able to create Contacts. All it can do is search for the Virgin Money Giving Fundraiser ID on existing contacts.
+    If donations are found that cannot be matched to an existing contact, the app will stop, and return a list of Contacts that have to be manually created. This page
+    is an example of that returned message. The focus here is not on the donations, but on the Fundraiser.
+  </apex:facet>
   <apex:form >
       <apex:sectionHeader title="Not All Virgin Money Fundraisers Could be Matched"/>
       <apex:pagemessages />
@@ -47,12 +56,60 @@
    </apex:pageBlock>
    
   <apex:pageBlock >
-  <h2>Page 2 (Option B)</h2>
+  <apex:facet name="header"><h2>Page 2 (Option B)</h2> If all donations could be matched to a contact by the Virgin Money Giving Fundraiser ID on the Contact Record,
+  then the app should return the list of donations to be uploaded. The user can review, and then confirm the Insert/Update.</apex:facet>
   <apex:form >
       <apex:sectionHeader title="All Virgin Money Fundraisers Were Matched"/>
       <apex:pagemessages />
       <apex:pageBlock >
-         All Fundraisers were matched using the Virgin Money Giving ID. To create / update the Donation records, please click Submit.<br/><br/>
+         All Fundraisers were matched using the Virgin Money Giving ID. To create / update the Donation records, please click Submit.<br/>
+         You may review the records to be uploaded below.<br/><br/>
+         <table>
+            <tr>
+                <th>Update / Insert status</th>
+                <th>First Name</th>                
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Virgin Money Giver ID</th>
+                <th>Donation ID</th>
+                <th>Donation Date</th>
+                <th>Gross Amount</th>
+                <th>Gift Aid Amount</th>
+            </tr>
+            <tr>
+                <td>Insert donation</td>
+                <td>Sally</td>
+                <td>Smith</td>
+                <td>sally.smith.fake@gmail.com</td>
+                <td>254468</td>
+                <td>4494332</td>
+                <td>2012-10-22</td>
+                <td>£20.00</td>
+                <td>£5.00</td>                                                                
+            </tr>
+            <tr>
+                <td>Insert donation</td>
+                <td>Sally</td>
+                <td>Smith</td>
+                <td>sally.smith.fake@gmail.com</td>
+                <td>254468</td>
+                <td>4490011</td>
+                <td>2012-10-24</td>
+                <td>£50.00</td>
+                <td>£12.50</td>                                                                
+            </tr>       
+            <tr>
+                <td>Update donation</td>
+                <td>Bob</td>
+                <td>Jones</td>
+                <td>bobby.j.fake@gmail.com</td>
+                <td>250123</td>
+                <td>4494321</td>
+                <td>2012-10-28</td>
+                <td>£20.00</td>
+                <td>£5.00</td>                                                                
+            </tr>                 
+          </table> 
          <button type="button">Insert / Update Donations</button> 
       </apex:pageBlock>      
    </apex:form>
@@ -60,14 +117,20 @@
   
   
   <apex:pageBlock >
-  <h2>Page 3</h2>
+  <apex:facet name="header"><h2>Page 3</h2> This page returns the status of the donations, with the number of inserted and updated.</apex:facet>
   <apex:form >
       <apex:sectionHeader title="Virgin Money Donations were Inserted / Updated"/>
       <apex:pagemessages />
       <apex:pageBlock >
-         A total of 56 donations were updated/inserted. Of those, 32 records were new donations, and 24 records were existing donations.<br/>
-         If Virgin Money Giving status of the record has changed, then the record details would be updated.
+         A total of 3 donations were updated/inserted. Of those, 2 record(s) were new donations, and 1 record(s) were existing donations.<br/>
+         If the Virgin Money Giving status of the record has changed, then the Donation (Opportunity) record details would be updated.
       </apex:pageBlock>      
    </apex:form>
    </apex:pageBlock>
+   
+   <apex:pageblock >
+     <h2>Notes:</h2> This app is designed to work with or without the Salesforce Non-profit Starter Pack. It only interactis with the contact and opportunity standard objects.
+     In theory, it can work with any fundraising add-on, as long as that add-on uses the Contact Object to record people. It is not designed, and will likely never be designed,
+     to work with Person Accounts or Leads.
+   </apex:pageblock>
 </apex:page>
