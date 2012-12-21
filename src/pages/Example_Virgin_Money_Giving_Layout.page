@@ -131,6 +131,292 @@
    <apex:pageblock >
      <h2>Notes:</h2> This app is designed to work with or without the Salesforce Non-profit Starter Pack. It only interactis with the contact and opportunity standard objects.
      In theory, it can work with any fundraising add-on, as long as that add-on uses the Contact Object to record people. It is not designed, and will likely never be designed,
-     to work with Person Accounts or Leads.
+     to work with Person Accounts or Leads.<br/><br/>
+ 
+
+
+
+<table>
+ <tr>
+  <th>Virgin
+  Money Giving Field Name</th>
+  <th>Salesforce Field (all but on on Donation object)</th>
+  <th>Field Type</th>
+ </tr>
+ <tr>
+  <td>donation id</td>
+  <td>VMG_Donation_ID__c</td>
+  <td>Text(20) (External ID) (Unique
+  Case Insensitive)</td>
+ </tr>
+ <tr>
+  <td>donation date</td>
+  <td>CloseDate</td>
+  <td>Date</td>
+ </tr>
+ <tr>
+  <td>donation type</td>
+  <td>VMG_Donation_Type__c</td>
+  <td>Text(100)</td>
+ </tr>
+ <tr>
+  <td>donation card type</td>
+  <td></td>
+ </tr>
+ <tr>
+  <td>gross amount</td>
+  <td>Gross_Amount__c</td>
+  <td>Currency(10, 2)</td>
+ </tr>
+ <tr>
+  <td>card processing fee amount</td>
+  <td>Card_Processing_Fee_Amount__c</td>
+  <td>Currency(16, 2)</td>
+ </tr>
+ <tr>
+  <td>card processing fee vat amount</td>
+  <td>Card_Processing_Fee_Vat_Amount__c</td>
+  <td>Currency(16, 2)</td>
+ </tr>
+ <tr>
+  <td>transaction fee amount</td>
+  <td>Transaction_Fee_Amount__c</td>
+  <td>Currency(16, 2)</td>
+ </tr>
+ <tr>
+  <td>transaction fee vat amount</td>
+  <td>Transaction_Fee_Vat_Amount__c</td>
+  <td>Currency(16, 2)</td>
+ </tr>
+ <tr>
+  <td>total_deductions</td>
+  <td></td>
+ </tr>
+ <tr>
+  <td>net amount</td>
+  <td></td>
+ </tr>
+ <tr>
+  <td>gift aid amount</td>
+  <td>Gift_Aid_Amount__c</td>
+  <td>Currency(16, 2)</td>
+ </tr>
+ <tr>
+  <td>gift aid paid to charity status</td>
+  <td>Gift_Aid_Paid_to_Charity_Status__c</td>
+  <td>Text(100)</td>
+ </tr>
+ <tr>
+  <td>estimated transitional relief</td>
+  <td></td>
+ </tr>
+ <tr>
+  <td>charity donor id</td>
+  <td>Donor_ID__c</td>
+  <td>Text(100)</td>
+ </tr>
+ <tr>
+  <td>donor title</td>
+  <td></td>
+ </tr>
+ <tr>
+  <td>donor forename</td>
+  <td></td>
+ </tr>
+ <tr>
+  <td>donor surname</td>
+  <td></td>
+ </tr>
+ <tr>
+  <td>donor date of birth</td>
+  <td></td>
+ </tr>
+ <tr>
+  <td>donor address line 1</td>
+  <td></td>
+ </tr>
+ <tr>
+  <td>donor address line 2</td>
+  <td></td>
+ </tr>
+ <tr>
+  <td>donor address line 3</td>
+  <td></td>
+ </tr>
+ <tr>
+  <td>donor address line 4</td>
+  <td></td>
+ </tr>
+ <tr>
+  <td>donor postcode</td>
+  <td></td>
+ </tr>
+ <tr>
+  <td>donor country</td>
+  <td></td>
+ </tr>
+ <tr>
+  <td>donor telephone number</td>
+  <td></td>
+ </tr>
+ <tr>
+  <td>donor email address</td>
+  <td></td>
+ </tr>
+ <tr>
+  <td>donor charity marketing allowed</td>
+  <td></td>
+ </tr>
+ <tr>
+  <td>donor gift aid status</td>
+  <td></td>
+ </tr>
+ <tr>
+  <td>donor code 1 label</td>
+  <td></td>
+ </tr>
+ <tr>
+  <td>donor code 1 value</td>
+  <td></td>
+ </tr>
+ <tr>
+  <td>donor code 2 label</td>
+  <td></td>
+ </tr>
+ <tr>
+  <td>donor code 2 value</td>
+  <td></td>
+ </tr>
+ <tr>
+  <td>donor message</td>
+  <td></td>
+ </tr>
+ <tr>
+  <td>charity fundraising page id</td>
+  <td></td>
+ </tr>
+ <tr>
+  <td>fundraising page name</td>
+  <td></td>
+ </tr>
+ <tr>
+  <td>fundraising page description</td>
+  <td></td>
+ </tr>
+ <tr>
+  <td>fundraising page code1 label</td>
+  <td></td>
+ </tr>
+ <tr>
+  <td>fundraising page code1 value</td>
+  <td></td>
+ </tr>
+ <tr>
+  <td>fundraising page code2 label</td>
+  <td></td>
+ </tr>
+ <tr>
+  <td>fundraising page code2 value</td>
+  <td></td>
+ </tr>
+ <tr>
+  <td>charity event id</td>
+  <td></td>
+ </tr>
+ <tr>
+  <td>event name</td>
+  <td></td>
+ </tr>
+ <tr>
+  <td>date of event</td>
+  <td></td>
+ </tr>
+ <tr>
+  <td>charity fundraiser id</td>
+  <td>Virgin_Money_Giving_Fundraiser_ID__c</td>
+  <td>Text(20) (External ID) (Unique Case Insensitive) <i>(on the Contact Record)</i></td>
+ </tr>
+ <tr>
+  <td>fundraiser title</td>
+  <td></td>
+ </tr>
+ <tr>
+  <td>fundraiser forename</td>
+  <td></td>
+ </tr>
+ <tr>
+  <td>fundraiser surname</td>
+  <td></td>
+ </tr>
+ <tr>
+  <td>fundraiser date of birth</td>
+  <td></td>
+ </tr>
+ <tr>
+  <td>fundraiser address line 1</td>
+  <td></td>
+ </tr>
+ <tr>
+  <td>fundraiser address line 2</td>
+  <td></td>
+ </tr>
+ <tr>
+  <td>fundraiser address line 3</td>
+  <td></td>
+ </tr>
+ <tr>
+  <td>fundraiser address line 4</td>
+  <td></td>
+ </tr>
+ <tr>
+  <td>fundraiser postcode</td>
+  <td></td>
+ </tr>
+ <tr>
+  <td>fundraiser country</td>
+  <td></td>
+ </tr>
+ <tr>
+  <td>fundraiser email address</td>
+  <td></td>
+ </tr>
+ <tr>
+  <td>fundraiser url</td>
+  <td></td>
+ </tr>
+ <tr>
+  <td>fundraiser telephone number</td>
+  <td></td>
+ </tr>
+ <tr>
+  <td>fundraiser charity marketing allowed</td>
+  <td></td>
+ </tr>
+ <tr>
+  <td>fundraiser code 1 label</td>
+  <td></td>
+ </tr>
+ <tr>
+  <td>fundraiser code 1 value</td>
+  <td></td>
+ </tr>
+ <tr>
+  <td>fundraiser code 2 label</td>
+  <td></td>
+ </tr>
+ <tr>
+  <td>fundraiser code 2 value</td>
+  <td></td>
+ </tr>
+ <tr>
+  <td>fundraiser group id</td>
+  <td></td>
+ </tr>
+ <tr>
+  <td>group name</td>
+  <td></td>
+ </tr>
+</table>
+
    </apex:pageblock>
 </apex:page>

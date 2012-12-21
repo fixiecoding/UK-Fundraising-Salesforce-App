@@ -6,24 +6,15 @@
     </types>
     <types>
         <members>*</members>
-        <name>ApexComponent</name>
-    </types>
-    <types>
-        <members>*</members>
         <name>ApexPage</name>
     </types>
     <types>
         <members>*</members>
-        <name>ApexTrigger</name>
-    </types>
-    <types>
-        <members>Contact</members>
-        <members>Opportunity</members>
-        <name>CustomObject</name>
+        <name>CustomApplication</name>
     </types>
     <types>
         <members>*</members>
-        <name>StaticResource</name>
+        <name>CustomTab</name>
     </types>
     <version>24.0</version>
 </Package>
