@@ -13,8 +13,42 @@
         <name>CustomApplication</name>
     </types>
     <types>
+        <members>Contact.LeadSource</members>
+        <members>Contact.Virgin_Money_Giving_Fundraiser_ID__c</members>
+        <members>Opportunity.Card_Processing_Fee_Amount__c</members>
+        <members>Opportunity.Card_Processing_Fee_Vat_Amount__c</members>
+        <members>Opportunity.Donation_ID__c</members>
+        <members>Opportunity.Donation_Type__c</members>
+        <members>Opportunity.Donor_ID__c</members>
+        <members>Opportunity.Gift_Aid_Amount__c</members>
+        <members>Opportunity.Gift_Aid_Paid_to_Charity_Status__c</members>
+        <members>Opportunity.Gross_Amount__c</members>
+        <members>Opportunity.LeadSource</members>
+        <members>Opportunity.StageName</members>
+        <members>Opportunity.Transaction_Fee_Amount__c</members>
+        <members>Opportunity.Transaction_Fee_Vat_Amount__c</members>
+        <members>Opportunity.Type</members>
+        <name>CustomField</name>
+    </types>
+    <types>
         <members>*</members>
         <name>CustomTab</name>
+    </types>
+    <types>
+        <members>Contact.AllContacts</members>
+        <members>Contact.BirthdaysThisMonth</members>
+        <members>Contact.MyContacts</members>
+        <members>Contact.NewLastWeek</members>
+        <members>Contact.NewThisWeek</members>
+        <members>Opportunity.AllOpportunities</members>
+        <members>Opportunity.ClosingNextMonth</members>
+        <members>Opportunity.ClosingThisMonth</members>
+        <members>Opportunity.MyOpportunities</members>
+        <members>Opportunity.NewLastWeek</members>
+        <members>Opportunity.NewThisWeek</members>
+        <members>Opportunity.Private</members>
+        <members>Opportunity.Won</members>
+        <name>ListView</name>
     </types>
     <version>24.0</version>
 </Package>
