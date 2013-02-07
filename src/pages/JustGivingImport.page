@@ -1,0 +1,10 @@
+<apex:page sidebar="false">
+    <style type="text/css">
+        .template {
+            text-align:center;
+            font-size:150%;
+            font-weight:bold;
+        }
+    </style>
+    <p class="template">UNDER CONSTRUCTION: Nothing in Just Giving for Now</p>
+</apex:page>

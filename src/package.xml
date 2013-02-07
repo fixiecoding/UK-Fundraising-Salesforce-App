@@ -9,14 +9,18 @@
         <name>ApexPage</name>
     </types>
     <types>
-        <members>*</members>
+        <members>Fundraising_UK</members>
         <name>CustomApplication</name>
     </types>
     <types>
+        <members>Contact.Languages__c</members>
         <members>Contact.LeadSource</members>
+        <members>Contact.Level__c</members>
         <members>Contact.Virgin_Money_Giving_Fundraiser_ID__c</members>
         <members>Opportunity.Card_Processing_Fee_Amount__c</members>
         <members>Opportunity.Card_Processing_Fee_Vat_Amount__c</members>
+        <members>Opportunity.CurrentGenerators__c</members>
+        <members>Opportunity.DeliveryInstallationStatus__c</members>
         <members>Opportunity.Donation_ID__c</members>
         <members>Opportunity.Donation_Type__c</members>
         <members>Opportunity.Donor_ID__c</members>
@@ -24,7 +28,10 @@
         <members>Opportunity.Gift_Aid_Paid_to_Charity_Status__c</members>
         <members>Opportunity.Gross_Amount__c</members>
         <members>Opportunity.LeadSource</members>
+        <members>Opportunity.MainCompetitors__c</members>
+        <members>Opportunity.OrderNumber__c</members>
         <members>Opportunity.StageName</members>
+        <members>Opportunity.TrackingNumber__c</members>
         <members>Opportunity.Transaction_Fee_Amount__c</members>
         <members>Opportunity.Transaction_Fee_Vat_Amount__c</members>
         <members>Opportunity.Type</members>
@@ -50,5 +57,13 @@
         <members>Opportunity.Won</members>
         <name>ListView</name>
     </types>
-    <version>24.0</version>
+    <types>
+        <members>*</members>
+        <name>StaticResource</name>
+    </types>
+    <types>
+        <members>Opportunity.DeliveryStatus</members>
+        <name>WebLink</name>
+    </types>
+    <version>26.0</version>
 </Package>
