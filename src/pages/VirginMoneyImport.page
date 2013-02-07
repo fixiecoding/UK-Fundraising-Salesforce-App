@@ -1,25 +1,60 @@
 <apex:page sidebar="false" controller="VirginMoneyImport">
+   <style type="text/css">
+      h2 {
+        text-align:center;
+        font-size:150%;
+      }
+   </style>
    <apex:form >
       <apex:sectionHeader title="Upload Virgin Money Giving Donations from a CSV Export"/>
       <apex:pagemessages />
       <apex:pageBlock >
              <center>
-              <apex:inputFile value="{!fileContent}" filename="{!fileName}" /> <apex:commandButton action="{!ReadFile}" value="Upload File" id="uploadXML" style="width:70px;"/>
-              <br/> <br/> <font color="red"> <b>Note: Only upload the CSV file downloaded from Virgin Money Giving </b> </font>
+                 <apex:inputFile value="{!fileContent}" filename="{!fileName}" /> 
+                 <apex:commandButton action="{!ReadFile}" 
+                                      value="Upload File" 
+                                      id="uploadCSV" style="width:70px;"/>
+                 <br/> <br/> 
+                 <font color="red"> 
+                     <b>Note: Only upload the CSV file downloaded from Virgin Money Giving </b> 
+                 </font>
              </center>   
       </apex:pageBlock>
-      <apex:repeat value="{!vmgIds}"  var="vmgId"><apex:outputText value="{!vmgId}" /></apex:repeat>
-      <apex:repeat value="{!csvData}"  var="vmgId"><apex:outputText value="{!vmgId}" /></apex:repeat>
-<apex:pageBlock >
-      <apex:pageblocktable value="{!matchedContacts}" var="acc" >
-          <apex:column headerValue="{!$ObjectType.Contact.Fields.FirstName.Label}">
-              <apex:outputField value="{!acc.FirstName}"/>
-          </apex:column>
-          <apex:column headerValue="{!$ObjectType.Contact.Fields.LastName.Label}">
-              <apex:outputField value="{!acc.LastName}"/>
-          </apex:column>
-      </apex:pageblocktable>
+
+      <h2 style="color:#cc9900;">Fundraisers (Contacts) Already in the System</h2>
+      <apex:pageBlock >
+          <apex:pageblocktable value="{!matchedContacts}" var="acc" >
+              <apex:column headerValue="{!$ObjectType.Contact.Fields.FirstName.Label}">
+                  <apex:outputField value="{!acc.FirstName}"/>
+              </apex:column>
+              <apex:column headerValue="{!$ObjectType.Contact.Fields.LastName.Label}">
+                  <apex:outputField value="{!acc.LastName}"/>
+              </apex:column>
+              <apex:column headerValue="{!$ObjectType.Contact.Fields.Virgin_Money_Giving_Fundraiser_ID__c.Label}">
+                  <apex:outputField value="{!acc.Virgin_Money_Giving_Fundraiser_ID__c}"/>
+              </apex:column>              
+          </apex:pageblocktable>
+      </apex:pageBlock>
       
-      </apex:pageBlock>      
+      <h2 style="color:#cc9900;">Fundraisers (Contacts) Not Yet in the System</h2>       
+      <apex:pageBlock >
+          <apex:pageblocktable value="{!nonMatchingContacts}" var="noMatch" >
+              <apex:column headerValue="{!$ObjectType.Contact.Fields.FirstName.Label}">
+                  <apex:outputText value="{!noMatch.ForeName}"/>
+              </apex:column>
+              <apex:column headerValue="{!$ObjectType.Contact.Fields.LastName.Label}">
+                  <apex:outputText value="{!noMatch.SurName}"/>
+              </apex:column>
+              <apex:column headerValue="{!$ObjectType.Contact.Fields.Virgin_Money_Giving_Fundraiser_ID__c.Label}">
+                  <apex:outputText value="{!noMatch.vmgID}"/>
+              </apex:column>              
+          </apex:pageblocktable>
+      </apex:pageBlock>
+      <div>
+         <apex:commandButton action="{!MigrateData}" 
+                             disabled="{!DataMigrationGrayedOut}"
+                             value="Migrate Donation Data to Salesforce" 
+                             id="upsertDonationData" />             
+      </div>   
    </apex:form>   
 </apex:page>
